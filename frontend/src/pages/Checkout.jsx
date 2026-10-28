@@ -165,7 +165,7 @@ const Checkout = () => {
           </div>
 
           <div className="checkout-summary">
-            <h4>Total to Pay: ₹{totalPrice.toFixed(2)}</h4>
+            <h4>Total to Pay: ${totalPrice.toFixed(2)}</h4>
             <button type="submit" className="btn">Pay Now</button>
           </div>
         </form>

@@ -60,7 +60,7 @@ const ProductDetail = () => {
           
           <h2 style={{ fontSize: '2.8rem', marginBottom: '10px' }}>{product.name}</h2>
 
-          <p className="detail-price" style={{ fontSize: '2.5rem', margin: '15px 0' }}>₹{product.price.toFixed(2)}</p>
+          <p className="detail-price" style={{ fontSize: '2.5rem', margin: '15px 0' }}>${product.price.toFixed(2)}</p>
 
           {/* Description */}
           <div style={{ marginBottom: '25px' }}>

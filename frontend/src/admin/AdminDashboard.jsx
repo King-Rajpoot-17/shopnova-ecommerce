@@ -77,7 +77,7 @@ const AdminDashboard = () => {
           </div>
           <div style={cardStyle}>
             <h4 style={{ color: '#a1a1aa', fontSize: '1rem' }}>Total Revenue</h4>
-            <div style={numberStyle}>₹{stats.totalRevenue.toFixed(2)}</div>
+            <div style={numberStyle}>${stats.totalRevenue.toFixed(2)}</div>
           </div>
         </div>
       ) : (

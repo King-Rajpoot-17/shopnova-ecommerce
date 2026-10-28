@@ -51,7 +51,7 @@ const AdminProducts = () => {
               <tr key={product._id} style={rowStyle}>
                 <td style={tdStyle}>{product._id.substring(0, 8)}...</td>
                 <td style={tdStyle}>{product.name}</td>
-                <td style={tdStyle}>₹{product.price.toFixed(2)}</td>
+                <td style={tdStyle}>${product.price.toFixed(2)}</td>
                 <td style={tdStyle}>{product.category}</td>
                 <td style={tdStyle}>{product.stock}</td>
                 <td style={tdStyle}>

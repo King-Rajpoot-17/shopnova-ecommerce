@@ -8,17 +8,16 @@ const connectDB = require('./config/db');
 
 dotenv.config();
 
-connectDB();
-
 const importData = async () => {
   try {
-    await User.deleteMany();
-    await Product.deleteMany();
+    await connectDB();
+    await User.deleteMany({});
+    await Product.deleteMany({});
 
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash('password123', salt);
-    
-    const adminUser = await User.create({
+
+    await User.create({
       name: 'Admin User',
       email: 'admin@shopnova.com',
       password: hashedPassword,
@@ -69,12 +68,14 @@ const importData = async () => {
     ];
 
     await Product.insertMany(products);
-    
+
     console.log('✅ Data Imported Successfully!');
-    process.exit();
   } catch (error) {
     console.error(`❌ Error with data import: ${error.message}`);
-    process.exit(1);
+    process.exitCode = 1;
+  } finally {
+    await mongoose.disconnect();
+    process.exit();
   }
 };
 
